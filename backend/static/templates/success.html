@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/svg+xml" href="/static/img/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/dist/tailwind.css" />
+    <title>{{.title}}</title>
+</head>
+
+<body class="h-screen bg-slate-900 text-slate-50 flex flex-col items-center space-y-4 my-12">
+    <img src="/static/img/logo.png" class="h-12 w-12 -rotate-[135deg] mb-6" />
+    <h1 class="text-xl md:text-2xl lg:text-3xl">
+        {{.header}}
+    </h1>
+    <p class="text-lg md:text-xl lg:text-2xl">
+        {{.body}}
+    </p>
+    <p class="text-base md:text-lg lg:text-xl text-slate-500">
+        If you haven't already been redirected, click
+        <a class="underline text-cyan-700 hover:text-cyan-600" href="{{.redirectUrl}}">here</a>
+    </p>
+
+</body>
+<script type="text/javascript">
+    const redirect = "{{.redirectUrl}}"
+    setTimeout(function () {
+        // if you want to simpulate http redirect use .replace over .href
+        window.location.replace(redirect)
+    }, (4 * 1000));
+</script>
+
+</html>

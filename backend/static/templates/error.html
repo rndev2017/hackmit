@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/dist/tailwind.css" />
+    <title>{{.title}}</title>
+</head>
+<body class="h-screen bg-slate-900  flex flex-col items-center space-y-4 my-12">
+    <h1 class="text-xl md:text-2xl lg:text-3xl text-slate-50 font-semibold">
+        {{.header}}
+    </h1>
+    <p class="text-lg md:text-xl lg:text-2xl text-slate-300">
+        {{.body}}
+    </p>
+    <p class="text-base md:text-lg lg:text-xl text-slate-500">
+        If the issue persists, please don't hesitate to reach out to 
+        <a class="underline text-cyan-700 hover:text-cyan-600" href="mailto:rnagavar@umich.edu">me</a>
+    </p>
+
+</body>
+<script type="text/javascript">
+    const redirect = "{{.redirectUrl}}"
+    setTimeout(function() {
+        // if you want to simulate http redirect use .replace over .href
+       window.location.replace(redirect)
+    }, (6 * 1000));
+</script>
+
+</html>
